@@ -1,9 +1,9 @@
-import type { KnowledgeArticleType } from "@/types/knowledge-base"
+import type { KnowledgeArticleType } from '@/types/knowledge-base';
 
 export const mockKnowledgeArticles: KnowledgeArticleType[] = [
   {
-    id: "1",
-    title: "Einführung in RAG-Systeme",
+    id: '1',
+    title: 'Einführung in RAG-Systeme',
     content: `# Einführung in RAG-Systeme
 
 RAG (Retrieval-Augmented Generation) ist ein Ansatz, der die Stärken von Sprachmodellen mit der Fähigkeit kombiniert, auf externe Informationen zuzugreifen.
@@ -25,15 +25,16 @@ RAG (Retrieval-Augmented Generation) ist ein Ansatz, der die Stärken von Sprach
 - Kundenservice-Chatbots
 - Dokumentensuche
 - Wissensmanagement-Systeme`,
-    summary: "Eine Übersicht über Retrieval-Augmented Generation (RAG) Systeme und ihre Funktionsweise.",
-    category: "technical",
-    tags: ["RAG", "LLM", "NLP", "Wissensmanagement"],
-    date: "2023-10-15",
-    author: "Dr. Maria Schmidt",
+    summary:
+      'Eine Übersicht über Retrieval-Augmented Generation (RAG) Systeme und ihre Funktionsweise.',
+    category: 'technical',
+    tags: ['RAG', 'LLM', 'NLP', 'Wissensmanagement'],
+    date: '2023-10-15',
+    author: 'Dr. Maria Schmidt',
   },
   {
-    id: "2",
-    title: "Optimierung von Vektordatenbanken",
+    id: '2',
+    title: 'Optimierung von Vektordatenbanken',
     content: `# Optimierung von Vektordatenbanken für RAG-Systeme
 
 Vektordatenbanken sind ein wesentlicher Bestandteil moderner RAG-Systeme. Dieser Artikel behandelt Optimierungsstrategien.
@@ -60,15 +61,15 @@ Das Aufteilen von Dokumenten in Chunks ist entscheidend:
 - Implementieren Sie Batch-Verarbeitung für Embedding-Generierung
 - Überwachen Sie die Latenz und optimieren Sie Engpässe`,
     summary:
-      "Strategien zur Optimierung von Vektordatenbanken für RAG-Systeme, einschließlich Indexierung und Chunking.",
-    category: "technical",
-    tags: ["Vektordatenbank", "Optimierung", "HNSW", "Chunking"],
-    date: "2023-11-05",
-    author: "Thomas Weber",
+      'Strategien zur Optimierung von Vektordatenbanken für RAG-Systeme, einschließlich Indexierung und Chunking.',
+    category: 'technical',
+    tags: ['Vektordatenbank', 'Optimierung', 'HNSW', 'Chunking'],
+    date: '2023-11-05',
+    author: 'Thomas Weber',
   },
   {
-    id: "3",
-    title: "Rechtliche Aspekte von KI-Assistenten",
+    id: '3',
+    title: 'Rechtliche Aspekte von KI-Assistenten',
     content: `# Rechtliche Aspekte von KI-Assistenten
 
 Der Einsatz von KI-Assistenten wirft verschiedene rechtliche Fragen auf, die Unternehmen beachten sollten.
@@ -96,15 +97,15 @@ Der Einsatz von KI-Assistenten wirft verschiedene rechtliche Fragen auf, die Unt
 - Dokumentieren Sie Entscheidungsprozesse
 - Implementieren Sie Überwachungsmechanismen`,
     summary:
-      "Überblick über rechtliche Aspekte beim Einsatz von KI-Assistenten, einschließlich Datenschutz und Haftungsfragen.",
-    category: "legal",
-    tags: ["Recht", "DSGVO", "Haftung", "Datenschutz"],
-    date: "2023-12-10",
-    author: "Dr. Julia Becker",
+      'Überblick über rechtliche Aspekte beim Einsatz von KI-Assistenten, einschließlich Datenschutz und Haftungsfragen.',
+    category: 'legal',
+    tags: ['Recht', 'DSGVO', 'Haftung', 'Datenschutz'],
+    date: '2023-12-10',
+    author: 'Dr. Julia Becker',
   },
   {
-    id: "4",
-    title: "Geschäftliche Vorteile von RAG-Systemen",
+    id: '4',
+    title: 'Geschäftliche Vorteile von RAG-Systemen',
     content: `# Geschäftliche Vorteile von RAG-Systemen
 
 RAG-Systeme bieten Unternehmen zahlreiche Vorteile gegenüber herkömmlichen KI-Lösungen.
@@ -133,15 +134,15 @@ RAG-Systeme bieten Unternehmen zahlreiche Vorteile gegenüber herkömmlichen KI-
 - E-Commerce: 25% höhere Konversionsrate durch bessere Produktempfehlungen
 - Gesundheitswesen: 30% schnellere Informationsbeschaffung für medizinisches Personal`,
     summary:
-      "Analyse der geschäftlichen Vorteile von RAG-Systemen, einschließlich Kosteneffizienz und Wettbewerbsvorteilen.",
-    category: "business",
-    tags: ["ROI", "Geschäftsstrategie", "Kosteneffizienz", "Fallstudien"],
-    date: "2024-01-20",
-    author: "Michael Schneider",
+      'Analyse der geschäftlichen Vorteile von RAG-Systemen, einschließlich Kosteneffizienz und Wettbewerbsvorteilen.',
+    category: 'business',
+    tags: ['ROI', 'Geschäftsstrategie', 'Kosteneffizienz', 'Fallstudien'],
+    date: '2024-01-20',
+    author: 'Michael Schneider',
   },
   {
-    id: "5",
-    title: "Grundlagen der Vektorsuche",
+    id: '5',
+    title: 'Grundlagen der Vektorsuche',
     content: `# Grundlagen der Vektorsuche
 
 Die Vektorsuche ist ein fundamentales Konzept in modernen RAG-Systemen und ermöglicht die effiziente Suche nach ähnlichen Inhalten.
@@ -174,10 +175,11 @@ Grundlegende Schritte zur Implementierung einer Vektorsuche:
 2. Embeddings für jeden Chunk generieren
 3. Embeddings in einer Vektordatenbank speichern
 4. Ähnlichkeitssuche für Benutzeranfragen durchführen`,
-    summary: "Einführung in die Grundlagen der Vektorsuche, einschließlich Ähnlichkeitsmaße und Embedding-Modelle.",
-    category: "technical",
-    tags: ["Vektorsuche", "Embeddings", "Ähnlichkeitsmaße", "NLP"],
-    date: "2024-02-15",
-    author: "Dr. Andreas Müller",
+    summary:
+      'Einführung in die Grundlagen der Vektorsuche, einschließlich Ähnlichkeitsmaße und Embedding-Modelle.',
+    category: 'technical',
+    tags: ['Vektorsuche', 'Embeddings', 'Ähnlichkeitsmaße', 'NLP'],
+    date: '2024-02-15',
+    author: 'Dr. Andreas Müller',
   },
-]
+];
