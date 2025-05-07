@@ -9,6 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import type { Highlight } from "@/types/pdf"
 import { useI18n } from "@/lib/i18n/i18n-context"
+import { I18nProvider } from "@/lib/i18n/i18n-context"
+import { ThemeProvider } from "@/components/theme-provider"
 
 // Mock highlights for demonstration
 const mockHighlights1: Highlight[] = [
@@ -21,7 +23,8 @@ const mockHighlights2: Highlight[] = [
   { page: 1, x: 50, y: 200, width: 200, height: 20, text: "A different highlight in document 2" },
 ]
 
-export default function PDFViewerPage() {
+// Create a wrapped component that uses the I18n hook
+function PDFViewerContent() {
   const [pdfUrl1, setPdfUrl1] = useState<string>("/placeholder.svg?height=800&width=600&text=Mock+PDF+1")
   const [pdfUrl2, setPdfUrl2] = useState<string>("/placeholder.svg?height=800&width=600&text=Mock+PDF+2")
   const { t } = useI18n()
@@ -95,5 +98,16 @@ export default function PDFViewerPage() {
         </Tabs>
       </div>
     </main>
+  )
+}
+
+// Export a wrapped component that provides the I18n context
+export default function PDFViewerPage() {
+  return (
+    <ThemeProvider>
+      <I18nProvider>
+        <PDFViewerContent />
+      </I18nProvider>
+    </ThemeProvider>
   )
 }
