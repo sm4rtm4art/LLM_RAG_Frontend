@@ -33,6 +33,36 @@ export function FileUpload({
       return
     }
 
+    // TODO: FASTAPI INTEGRATION
+    // You might want to validate the file type or content on the server side
+    // Example:
+    // async function validateFile(file: File) {
+    //   try {
+    //     const formData = new FormData();
+    //     formData.append("file", file);
+    //     const response = await fetch("/api/validate-file", {
+    //       method: "POST",
+    //       body: formData,
+    //     });
+    //     const data = await response.json();
+    //     if (!data.valid) {
+    //       setError(data.message);
+    //       return false;
+    //     }
+    //     return true;
+    //   } catch (error) {
+    //     console.error("Error validating file:", error);
+    //     setError("Failed to validate file");
+    //     return false;
+    //   }
+    // }
+    //
+    // if (await validateFile(file)) {
+    //   setSelectedFile(file);
+    //   setError(null);
+    //   onFileSelect(file);
+    // }
+
     setSelectedFile(file)
     setError(null)
     onFileSelect(file)

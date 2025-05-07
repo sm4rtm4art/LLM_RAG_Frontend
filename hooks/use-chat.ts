@@ -28,7 +28,10 @@ export function useChat() {
         let response
 
         if (file) {
-          // Handle file upload
+          // TODO: FASTAPI INTEGRATION
+          // This handles file uploads to your FastAPI backend
+          // The apiService.sendConversationMessageWithFile method should be updated
+          // to call your FastAPI file upload endpoint
           const formData = new FormData()
           formData.append("query", content)
           formData.append("file", file)
@@ -38,7 +41,10 @@ export function useChat() {
 
           response = await apiService.sendConversationMessageWithFile(formData)
         } else {
-          // Regular text message
+          // TODO: FASTAPI INTEGRATION
+          // This sends regular text messages to your FastAPI backend
+          // The apiService.sendConversationMessage method should be updated
+          // to call your FastAPI conversation endpoint
           response = await apiService.sendConversationMessage({
             query: content,
             conversation_id: conversationId,

@@ -1,3 +1,8 @@
+// TODO: FASTAPI INTEGRATION
+// This entire file should be replaced with calls to your FastAPI backend
+// The frontend should directly call your FastAPI endpoints instead of these Next.js API routes
+// These mock routes are only for development purposes
+
 import { NextResponse } from "next/server"
 import type { PDFComparisonResult } from "@/types/pdf"
 
@@ -10,8 +15,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Both file1 and file2 are required" }, { status: 400 })
     }
 
-    // In a real app, this would perform actual PDF comparison
-    // For this demo, we'll return mock comparison results
+    // TODO: FASTAPI INTEGRATION
+    // In a real app, this would:
+    // 1. Send both files to your FastAPI backend
+    // 2. The backend would compare the PDFs using a library like PyPDF2 or pdf-diff
+    // 3. Return the comparison results
+    // Example FastAPI endpoint: /documents/pdf/compare
 
     // Mock comparison result
     const mockComparisonResult: PDFComparisonResult = {
