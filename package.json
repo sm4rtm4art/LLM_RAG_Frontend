@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test-affected": "jest --bail --findRelatedTests",
-    "format": "prettier --write ."
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -64,7 +62,9 @@
     "react-syntax-highlighter": "latest",
     "remark-gfm": "latest",
     "@tailwindcss/typography": "latest",
-    "diff": "latest"
+    "diff": "latest",
+    "pdfjs-dist": "latest",
+    "react-pdf": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
@@ -72,8 +72,6 @@
     "@types/react-dom": "^19",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5",
-    "pre-commit": "^1.2.2",
-    "prettier": "^3.2.5"
+    "typescript": "^5"
   }
 }

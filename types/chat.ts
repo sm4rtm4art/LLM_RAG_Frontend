@@ -1,12 +1,13 @@
-import type { RetrievedDocument } from './api';
+import type { RetrievedDocument } from "./api"
 
 export enum MessageRole {
-  USER = 'user',
-  ASSISTANT = 'assistant',
+  USER = "user",
+  ASSISTANT = "assistant",
 }
 
 export interface Message {
-  role: MessageRole;
-  content: string;
-  retrievedDocuments?: RetrievedDocument[];
+  role: MessageRole
+  content: string
+  retrievedDocuments?: RetrievedDocument[]
+  hasAttachment?: boolean
 }
