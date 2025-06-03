@@ -1,8 +1,3 @@
-// TODO: FASTAPI INTEGRATION
-// This entire file should be replaced with calls to your FastAPI backend
-// The frontend should directly call your FastAPI endpoints instead of these Next.js API routes
-// These mock routes are only for development purposes
-
 import { NextResponse } from "next/server"
 import type { ConversationResponse } from "@/types/api"
 
@@ -22,12 +17,8 @@ export async function POST(request: Request) {
     const fileType = file.type
     const fileSize = file.size
 
-    // TODO: FASTAPI INTEGRATION
-    // In a real app, you would:
-    // 1. Upload the file to your FastAPI backend
-    // 2. Process the file (extract text, create embeddings, etc.)
-    // 3. Generate a response based on the file content and query
-    // 4. Return the response with retrieved documents
+    // In a real app, you would process the file here
+    // For PDFs, you might extract text, create embeddings, etc.
 
     // Get existing conversation or create new one
     const existingConversation = conversations[conversationId]

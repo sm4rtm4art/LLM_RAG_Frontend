@@ -25,25 +25,6 @@ export function KnowledgeBaseInterface() {
   const [selectedArticle, setSelectedArticle] = useState<KnowledgeArticleType | null>(null)
   const [showFeedbackForm, setShowFeedbackForm] = useState(false)
   const [viewingDocument, setViewingDocument] = useState<string | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
-
-  // TODO: FASTAPI INTEGRATION
-  // Replace this with a call to your FastAPI backend to fetch knowledge base articles
-  // Example:
-  // useEffect(() => {
-  //   async function fetchArticles() {
-  //     setIsLoading(true);
-  //     try {
-  //       const fetchedArticles = await apiService.getKnowledgeBaseArticles();
-  //       setArticles(fetchedArticles);
-  //     } catch (error) {
-  //       console.error("Error fetching articles:", error);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   }
-  //   fetchArticles();
-  // }, []);
 
   // Filter articles based on search query and selected category
   useEffect(() => {
@@ -70,40 +51,12 @@ export function KnowledgeBaseInterface() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-
-    // TODO: FASTAPI INTEGRATION
-    // Replace this with a call to your FastAPI backend to search knowledge base articles
-    // Example:
-    // async function searchArticles() {
-    //   setIsLoading(true);
-    //   try {
-    //     const fetchedArticles = await apiService.getKnowledgeBaseArticles(selectedCategory, searchQuery);
-    //     setFilteredArticles(fetchedArticles);
-    //   } catch (error) {
-    //     console.error("Error searching articles:", error);
-    //   } finally {
-    //     setIsLoading(false);
-    //   }
-    // }
-    // searchArticles();
+    // Search is already handled by the useEffect
   }
 
   const handleArticleSelect = (article: KnowledgeArticleType) => {
     setSelectedArticle(article)
     setViewingDocument(null)
-
-    // TODO: FASTAPI INTEGRATION
-    // You might want to fetch the full article content from your FastAPI backend
-    // Example:
-    // async function fetchFullArticle(articleId: string) {
-    //   try {
-    //     const fullArticle = await apiService.getKnowledgeBaseArticle(articleId);
-    //     setSelectedArticle(fullArticle);
-    //   } catch (error) {
-    //     console.error("Error fetching article:", error);
-    //   }
-    // }
-    // fetchFullArticle(article.id);
   }
 
   const handleBackToList = () => {
@@ -118,35 +71,10 @@ export function KnowledgeBaseInterface() {
 
   const handleViewDocument = (documentId: string) => {
     setViewingDocument(documentId)
-
-    // TODO: FASTAPI INTEGRATION
-    // You might want to log document views or fetch additional document metadata
-    // Example:
-    // async function logDocumentView(documentId: string) {
-    //   try {
-    //     await apiService.logDocumentView(documentId);
-    //   } catch (error) {
-    //     console.error("Error logging document view:", error);
-    //   }
-    // }
-    // logDocumentView(documentId);
   }
 
   const handleFeedbackSubmit = (articleId: string, isHelpful: boolean, comment: string) => {
-    // TODO: FASTAPI INTEGRATION
-    // Replace this with a call to your FastAPI backend to submit feedback
-    // Example:
-    // async function submitFeedback(articleId: string, isHelpful: boolean, comment: string) {
-    //   try {
-    //     await apiService.submitKnowledgeBaseFeedback(articleId, isHelpful, comment);
-    //     // Show success message
-    //   } catch (error) {
-    //     console.error("Error submitting feedback:", error);
-    //     // Show error message
-    //   }
-    // }
-    // submitFeedback(articleId, isHelpful, comment);
-
+    // In a real app, this would send the feedback to the server
     console.log("Feedback submitted:", { articleId, isHelpful, comment })
     setShowFeedbackForm(false)
     // Show a thank you message or notification
@@ -220,13 +148,7 @@ export function KnowledgeBaseInterface() {
                 </div>
               </div>
 
-              {isLoading ? (
-                <div className="flex justify-center py-8">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-                </div>
-              ) : (
-                <KnowledgeArticleList articles={filteredArticles} onArticleSelect={handleArticleSelect} />
-              )}
+              <KnowledgeArticleList articles={filteredArticles} onArticleSelect={handleArticleSelect} />
             </>
           ) : showFeedbackForm ? (
             <KnowledgeFeedbackForm

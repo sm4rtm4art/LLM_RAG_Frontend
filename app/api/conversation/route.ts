@@ -1,8 +1,4 @@
-// TODO: FASTAPI INTEGRATION
-// This entire file should be replaced with calls to your FastAPI backend
-// The frontend should directly call your FastAPI endpoints instead of these Next.js API routes
-// These mock routes are only for development purposes
-
+// Mock API route for development purposes
 import { NextResponse } from "next/server"
 import type { ConversationRequest, ConversationResponse } from "@/types/api"
 

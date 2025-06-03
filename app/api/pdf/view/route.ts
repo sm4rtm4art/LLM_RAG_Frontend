@@ -1,8 +1,3 @@
-// TODO: FASTAPI INTEGRATION
-// This entire file should be replaced with calls to your FastAPI backend
-// The frontend should directly call your FastAPI endpoints instead of these Next.js API routes
-// These mock routes are only for development purposes
-
 import { NextResponse } from "next/server"
 
 export async function GET(request: Request) {
@@ -14,12 +9,8 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: "Filename is required" }, { status: 400 })
     }
 
-    // TODO: FASTAPI INTEGRATION
-    // In a real app, this would:
-    // 1. Validate the filename and user permissions
-    // 2. Generate a signed URL or token for secure access to the PDF
-    // 3. Return the URL to the frontend
-    // Example FastAPI endpoint: /documents/pdf/view?filename={filename}
+    // In a real app, this would validate the filename and fetch from a secure storage
+    // For this demo, we'll return a mock PDF URL
 
     // Mock PDF URLs based on filename
     const mockPdfUrls: Record<string, string> = {

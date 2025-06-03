@@ -41,41 +41,12 @@ export function PDFViewer({ url, highlights = [], onDocumentLoad, onPageChange, 
   // Filter highlights for the current page
   const currentPageHighlights = highlights.filter((highlight) => highlight.page === pageNumber)
 
-  // TODO: FASTAPI INTEGRATION
-  // You might want to fetch highlights from your FastAPI backend based on the current page
-  // Example:
-  // useEffect(() => {
-  //   async function fetchHighlights() {
-  //     try {
-  //       const fetchedHighlights = await apiService.getPdfHighlights(url, pageNumber);
-  //       setCurrentPageHighlights(fetchedHighlights);
-  //     } catch (error) {
-  //       console.error("Error fetching highlights:", error);
-  //     }
-  //   }
-  //   if (url && pageNumber) {
-  //     fetchHighlights();
-  //   }
-  // }, [url, pageNumber]);
-
   function onDocumentLoadSuccess({ numPages, ...pdf }: PDFDocumentProxy & { numPages: number }) {
     setNumPages(numPages)
     setIsLoading(false)
     if (onDocumentLoad) {
       onDocumentLoad(pdf as PDFDocumentProxy)
     }
-
-    // TODO: FASTAPI INTEGRATION
-    // You might want to log document views or fetch additional document metadata
-    // Example:
-    // async function logDocumentView(documentUrl: string) {
-    //   try {
-    //     await apiService.logPdfView(documentUrl);
-    //   } catch (error) {
-    //     console.error("Error logging document view:", error);
-    //   }
-    // }
-    // logDocumentView(url);
   }
 
   function changePage(offset: number) {
@@ -99,6 +70,7 @@ export function PDFViewer({ url, highlights = [], onDocumentLoad, onPageChange, 
   }, [initialPage, numPages])
 
   // In the return statement, add a condition to show the fallback viewer
+  // Replace the current return statement with:
   return (
     <div className="flex flex-col h-full">
       {pdfJsError ? (

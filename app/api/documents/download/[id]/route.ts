@@ -1,8 +1,3 @@
-// TODO: FASTAPI INTEGRATION
-// This entire file should be replaced with calls to your FastAPI backend
-// The frontend should directly call your FastAPI endpoints instead of these Next.js API routes
-// These mock routes are only for development purposes
-
 import { NextResponse } from "next/server"
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
@@ -13,12 +8,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
       return NextResponse.json({ error: "Document ID is required" }, { status: 400 })
     }
 
-    // TODO: FASTAPI INTEGRATION
-    // In a real app, this would:
-    // 1. Validate the document ID and user permissions
-    // 2. Retrieve the document from your database or storage
-    // 3. Stream the document to the client with appropriate headers
-    // Example FastAPI endpoint: /documents/download/{document_id}
+    // In a real app, this would fetch the document from storage and stream it to the client
+    // For this demo, we'll redirect to a mock document URL
 
     // Mock document URLs based on ID
     const mockDocumentUrls: Record<string, string> = {

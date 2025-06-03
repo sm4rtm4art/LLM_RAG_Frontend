@@ -14,9 +14,6 @@ export function useQuery() {
     setError(null)
 
     try {
-      // TODO: FASTAPI INTEGRATION
-      // This calls the apiService which should be updated to use your FastAPI backend
-      // The apiService.sendQuery method should be modified to call your FastAPI endpoint
       const response = await apiService.sendQuery({
         query,
         top_k: 3,
