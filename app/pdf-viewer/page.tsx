@@ -1,8 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { PDFViewer } from "@/components/pdf/pdf-viewer"
-import { PDFComparison } from "@/components/pdf/pdf-comparison"
+import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -11,6 +10,16 @@ import type { Highlight } from "@/types/pdf"
 import { useI18n } from "@/lib/i18n/i18n-context"
 import { I18nProvider } from "@/lib/i18n/i18n-context"
 import { ThemeProvider } from "@/components/theme-provider"
+
+const PDFViewer = dynamic(() => import("@/components/pdf/pdf-viewer").then((mod) => mod.PDFViewer), {
+  ssr: false,
+  loading: () => <div className="h-full flex items-center justify-center">Loading PDF...</div>,
+})
+
+const PDFComparison = dynamic(() => import("@/components/pdf/pdf-comparison").then((mod) => mod.PDFComparison), {
+  ssr: false,
+  loading: () => <div className="h-full flex items-center justify-center">Loading comparison...</div>,
+})
 
 // Mock highlights for demonstration
 const mockHighlights1: Highlight[] = [

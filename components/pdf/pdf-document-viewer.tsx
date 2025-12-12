@@ -1,9 +1,18 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { PDFViewer } from "./pdf-viewer"
-import { PDFComparison } from "./pdf-comparison"
+import dynamic from "next/dynamic"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+const PDFViewer = dynamic(() => import("./pdf-viewer").then((mod) => mod.PDFViewer), {
+  ssr: false,
+  loading: () => <div className="h-full flex items-center justify-center">Loading PDF...</div>,
+})
+
+const PDFComparison = dynamic(() => import("./pdf-comparison").then((mod) => mod.PDFComparison), {
+  ssr: false,
+  loading: () => <div className="h-full flex items-center justify-center">Loading comparison...</div>,
+})
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import type { Highlight, PDFDocument } from "@/types/pdf"
